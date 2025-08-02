@@ -1,4 +1,4 @@
-import {Component, computed, Input, Output, EventEmitter} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {DUMMY_USERS} from '../dummy-users';
 
 const random = Math.floor(Math.random() * DUMMY_USERS.length);
@@ -9,6 +9,7 @@ const random = Math.floor(Math.random() * DUMMY_USERS.length);
   templateUrl: './user.html',
   styleUrl: './user.css'
 })
+
 export class User {
   @Input({required: true}) id!: string;
   @Input({required: true}) avatar!:string;
