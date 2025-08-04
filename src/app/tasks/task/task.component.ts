@@ -4,7 +4,7 @@ import {Task} from './task.model';
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
-  styleUrl: './task.component.css'
+  styleUrls: ['./task.component.css']
 })
 
 export class TaskComponent {

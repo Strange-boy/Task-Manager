@@ -10,7 +10,7 @@ import { DUMMY_USERS } from './dummy-users';
   selector: 'app-root',
   imports: [HeaderComponent, TasksComponent, User],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 
 export class App {

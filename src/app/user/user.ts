@@ -5,12 +5,12 @@ import {UserModel} from './user.model';
   selector: 'app-user',
   imports: [],
   templateUrl: './user.html',
-  styleUrl: './user.css'
+  styleUrls: ['./user.css']
 })
 
 export class User {
   @Input({required:true}) user !: UserModel;
-  @Input() selected : boolean;
+  @Input({required: true}) selected !: boolean;
   @Output() select = new EventEmitter<string>();
 
   get imagePath(){
@@ -18,6 +18,7 @@ export class User {
   }
 
   onSelectUser(){
+    console.log(this.selected);
     this.select.emit(this.user.id);
   }
 }
