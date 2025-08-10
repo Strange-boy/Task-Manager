@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {TaskComponent} from './task/task.component';
 import {NewTaskComponent} from './new-task/new-task.component';
+import { type NewTaskModel} from './new-task/new-task.model';
 
 @Component({
   selector : 'app-tasks',
@@ -53,6 +54,19 @@ export class TasksComponent {
   }
 
   onCancelTask(){
+    this.isNewTaskAdded = false;
+  }
+
+  onNewTasksCreated(taskData : NewTaskModel){
+    this.tasks.unshift({
+      id : new Date().getTime().toString(),
+      userId: this.userId,
+      title: taskData.title,
+      summary: taskData.summary,
+      dueDate: taskData.dueDate
+    })
+
+    //finally we have to close the tab
     this.isNewTaskAdded = false;
   }
 
