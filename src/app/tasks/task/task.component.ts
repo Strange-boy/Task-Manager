@@ -14,9 +14,11 @@ import {TasksService} from '../tasks.service';
   styleUrls: ['./task.component.css']
 })
 
+
 export class TaskComponent {
    @Input({required: true}) task !: Task;
-   private taskService = inject(TasksService)
+   private taskService = inject(TasksService);
+
 
    onCompleteTasks(){
      this.taskService.removeTasks(this.task.id);
